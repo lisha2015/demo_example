@@ -3,8 +3,20 @@ server:
     port: 8082
     servlet:
         context-path: /demo
+    error:
+        whitelabel:
+            enabled: false
+#        include-stacktrace: always
+#        path: /error/404.html
+    resources:
+        add-mappings: false
+
+
 
 spring:
+    mvc:
+        throw-exception-if-no-handler-found: true
+
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         type: com.alibaba.druid.pool.DruidDataSource
@@ -26,6 +38,9 @@ spring:
             time-between-eviction-runs-millis: 60000
             min-evictable-idle-time-millis: 300000
             validation-query-timeout: 2000
+
+
+
 
 
 mybatis:
